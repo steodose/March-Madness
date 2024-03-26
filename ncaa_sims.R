@@ -6,7 +6,7 @@ library(gtExtras)
 
 
 # read in Ratings File (using Sports Ref SRS)
-ratings <- read_csv("/Users/Stephan/Desktop/R Projects/March-Madness/ratings.csv")
+ratings <- read_csv("https://raw.githubusercontent.com/steodose/March-Madness/main/ratings.csv")
 
 
 # Logistic regression on SRS ratings to calculate the probability of a team winning based on ratings
@@ -41,52 +41,50 @@ prepare_teams_for_round <- function(teams) {
     return(teams)
 }
 
-# Function to simulate the tournament
+
+# function to simulate tournament
 simulate_tournament <- function(ratings) {
     ratings <- prepare_teams_for_round(ratings)
     round_results <- list()
     
     for (round in 1:6) {
         cat("Starting Round:", round, "\n")
-        # Split teams by region only for the pairing logic
-        teams_in_round <- split(ratings, f = ratings$region)
+        
+        if (round < 5) { # Rounds before the Final Four
+            teams_in_round <- split(ratings, f = ratings$region)
+        } else {
+            teams_in_round <- list(all = ratings) # Combine all for Final Four and Championship
+        }
         
         winners <- lapply(teams_in_round, function(region_teams) {
-            # If only one team is left, it's the region's winner
-            if (nrow(region_teams) == 1) {
-                return(region_teams) 
-            }
-            
             new_winners <- tibble()
             
-            # Correct pairing logic for all rounds
-            # After the first round, winners need to be re-seeded or sorted before pairing
-            region_teams <- region_teams[order(region_teams$position), ]
-            n <- nrow(region_teams)
-            
-            # For the first round, use the original seeding to create matchups
-            # For subsequent rounds, pair teams based on their new "position" or progression
-            if (round == 1) {
-                matchups <- 1:(n/2)  # Original matchups based on seeding
-            } else {
-                # Re-calculate matchups based on remaining teams
-                region_teams <- region_teams %>% arrange(desc(rating)) # Sort teams by their rating or another metric if needed
-                matchups <- 1:(n/2)
-            }
-            
-            for (i in matchups) {
-                team1 <- region_teams[i, ]
-                team2 <- region_teams[n - i + 1, ]
-                winner <- simulate_game(team1, team2)
+            if (round == 5) {  # Final Four
+                # Manually set the matchups for the Final Four
+                west_vs_east_winner <- simulate_game(region_teams[region_teams$region == "West",], region_teams[region_teams$region == "East",])
+                midwest_vs_south_winner <- simulate_game(region_teams[region_teams$region == "Midwest",], region_teams[region_teams$region == "South",])
+                new_winners <- bind_rows(new_winners, west_vs_east_winner, midwest_vs_south_winner)
+            } else if (round == 6) { # Championship
+                # Directly face off the two winners from the Final Four
+                winner <- simulate_game(region_teams[1,], region_teams[2,])
                 new_winners <- bind_rows(new_winners, winner)
+            } else { # Rounds 1-4
+                for (i in 1:(nrow(region_teams)/2)) {
+                    team1 <- region_teams[i, ]
+                    team2 <- region_teams[nrow(region_teams) - i + 1, ]
+                    winner <- simulate_game(team1, team2)
+                    new_winners <- bind_rows(new_winners, winner)
+                }
             }
             
             return(new_winners)
         })
         
         ratings <- bind_rows(winners)
-        ratings <- prepare_teams_for_round(ratings)
-        round_results[[round]] <- ratings
+        if (round < 5) {
+            ratings <- prepare_teams_for_round(ratings)
+        }
+        round_results[[round]] <- ratings  # Store the results of this round
         cat("Winners of Round", round, ":\n")
         print(ratings$team_name)
     }
@@ -94,51 +92,55 @@ simulate_tournament <- function(ratings) {
     return(round_results)
 }
 
+
 # Initialize the probabilities in the ratings dataframe
-columns_to_add <- c("first_round", "second_round", "sweet_sixteen", "elite_eight", "final_four", "championship_game", "champ")
+columns_to_add <- c("second_round", "sweet_sixteen", "elite_eight", "final_four", "championship_game", "champ")
+
+# Initialize the probabilities in the ratings dataframe
+# Since we're skipping the 'first_round' (all teams are at 100%), start from 'second_round'
 for (column in columns_to_add) {
-    ratings[[column]] <- 0
+    ratings[[column]] <- 0  # Initialize with 0; these will be updated during simulations
 }
 
-num_simulations <- 10
+# number of sims to run
+num_simulations <- 1000
 
-
-# Run sims
-set.seed(1234)
+# Run simulations
+set.seed(1234)  # For reproducibility
 for (simulation in 1:num_simulations) {
     round_results <- simulate_tournament(ratings)
+    
+    # Adjusted loop to correctly update probabilities starting from 'second_round'
     for (round in 1:6) {
+        current_stage = columns_to_add[round] 
         winners <- round_results[[round]]
-        ratings[,columns_to_add[round]] <- ratings[,columns_to_add[round]] + ifelse(ratings$team_name %in% winners$team_name, 1, 0)
+        # Update probabilities for reaching each stage of the tournament
+        if (!is.null(winners)) {
+            ratings[[current_stage]] <- ratings[[current_stage]] + ifelse(ratings$team_name %in% winners$team_name, 1, 0)
+        }
     }
 }
 
-
-# The last round of winners is the champion
-champions <- round_results[[length(round_results)]]
-ratings$champ <- ratings$champ + ifelse(ratings$team_name %in% champions$team_name, 1, 0)
-
-
-# Convert counts to probabilities
-ratings[,5:11] <- ratings[,5:11] / num_simulations
+# Convert counts to probabilities (no need to adjust for 'first_round' as it's 100% for all)
+ratings[,columns_to_add] <- ratings[,columns_to_add] / num_simulations
 
 # Adjust the number of decimals for all probability columns
-probability_columns <- c("first_round", "second_round", "sweet_sixteen", "elite_eight", "final_four", "championship_game", "champ")
-ratings[probability_columns] <- round(ratings[probability_columns], 3)  # Adjust to the desired number of decimals
+ratings[columns_to_add] <- round(ratings[columns_to_add], 3)
+ratings$first_round <- 1 # first round probabilities are all 100%
 
-# Rename the final dataframe
+# Final dataframe preparation
 sims <- ratings
 
 
 
-##### gt results table #####
-team_mapping <- read_csv('/Users/Stephan/Desktop/R Projects/March-Madness/ncaa_team_mapping.csv')
+##### --------- Results table ---------- #####
+team_mapping <- read_csv('https://raw.githubusercontent.com/steodose/March-Madness/main/ncaa_team_mapping.csv')
 
 sims_gt <- sims %>%
     left_join(team_mapping, by = c("team_name" = "silver_team"))
 
 sims_gt %>%
-    select(logo_url, team_name:champ) %>%
+    select(logo_url, team_name:rating, first_round, second_round:champ) %>%
     arrange(-champ, -rating) %>%
     mutate(rank = row_number()) %>%
     relocate(rank) %>%
@@ -167,7 +169,7 @@ sims_gt %>%
         decimals = 1
     ) %>%
     tab_header(title = md("**2024 March Madness Predictions**"),
-               subtitle ="Difference between experts' predictions and America's predictions. Only top 20 most picked teams shown.") %>%
+               subtitle ="Based on 10,000 simulations of the NCAA Tournament.") %>%
     tab_source_note(
         source_note = md("DATA: sports-reference.com<br>TABLE: @steodosescu")) %>%
     opt_table_font(

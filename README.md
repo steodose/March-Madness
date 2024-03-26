@@ -1,6 +1,6 @@
 # March-Madness
 
-![Simulations]()
+![Simulations](https://github.com/steodose/March-Madness/blob/main/2024%20March%20Madness%20Predictions.png?raw=true)
 
 This project simulates the NCAA Men's Basketball Tournament outcomes using a Monte Carlo method based on team ratings. The simulation predicts the probability of each team advancing through the various rounds of the tournament, culminating in the championship.
 

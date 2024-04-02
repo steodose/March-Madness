@@ -8,15 +8,34 @@ library(gtExtras)
 # read in Ratings File (using Sports Ref SRS)
 ratings <- read_csv("https://raw.githubusercontent.com/steodose/March-Madness/main/ratings.csv")
 
+#calculate df of ratings
+std_dev <- sd(ratings$rating)
 
-# Logistic regression on SRS ratings to calculate the probability of a team winning based on ratings
-calculate_probability <- function(rating_team1, rating_team2) {
-    1 / (1 + exp(-(rating_team1 - rating_team2)))
+# Decide on a fraction of the standard deviation to use as variance
+variance_factor <- std_dev  # Adjust this fraction based on preference
+
+# Old Logistic regression on SRS ratings to calculate the probability of a team winning based on ratings
+# calculate_probability <- function(rating_team1, rating_team2) {
+#     1 / (1 + exp(-(rating_team1 - rating_team2)))
+# }
+
+# New Logic
+calculate_probability <- function(rating_team1, rating_team2, variance_factor) {
+    
+    adjusted_rating_team1 <- rating_team1 + runif(1, -variance_factor, variance_factor)
+    adjusted_rating_team2 <- rating_team2 + runif(1, -variance_factor, variance_factor)
+    
+    # Calculate the probability using the adjusted ratings
+    prob_team1_wins <- 1 / (1 + exp(-(adjusted_rating_team1 - adjusted_rating_team2)))
+    
+    return(prob_team1_wins)
 }
 
+
+
 # Function to simulate a single game
-simulate_game <- function(team1, team2) {
-    prob_team1_wins <- calculate_probability(team1$rating, team2$rating)
+simulate_game <- function(team1, team2, variance_factor) {
+    prob_team1_wins <- calculate_probability(team1$rating, team2$rating, variance_factor)
     if (runif(1) < prob_team1_wins) {
         cat(paste(team1$team_name, "wins over", team2$team_name, "\n"))
         return(team1)
@@ -43,7 +62,7 @@ prepare_teams_for_round <- function(teams) {
 
 
 # function to simulate tournament
-simulate_tournament <- function(ratings) {
+simulate_tournament <- function(ratings, variance_factor) {
     ratings <- prepare_teams_for_round(ratings)
     round_results <- list()
     
@@ -61,18 +80,18 @@ simulate_tournament <- function(ratings) {
             
             if (round == 5) {  # Final Four
                 # Manually set the matchups for the Final Four
-                west_vs_east_winner <- simulate_game(region_teams[region_teams$region == "West",], region_teams[region_teams$region == "East",])
-                midwest_vs_south_winner <- simulate_game(region_teams[region_teams$region == "Midwest",], region_teams[region_teams$region == "South",])
+                west_vs_east_winner <- simulate_game(region_teams[region_teams$region == "West",], region_teams[region_teams$region == "East",], variance_factor)
+                midwest_vs_south_winner <- simulate_game(region_teams[region_teams$region == "Midwest",], region_teams[region_teams$region == "South",], variance_factor)
                 new_winners <- bind_rows(new_winners, west_vs_east_winner, midwest_vs_south_winner)
             } else if (round == 6) { # Championship
-                # Directly face off the two winners from the Final Four
-                winner <- simulate_game(region_teams[1,], region_teams[2,])
+                # Directly face off the two winners from the Final Four in the Champ game
+                winner <- simulate_game(region_teams[1,], region_teams[2,], variance_factor)
                 new_winners <- bind_rows(new_winners, winner)
             } else { # Rounds 1-4
                 for (i in 1:(nrow(region_teams)/2)) {
                     team1 <- region_teams[i, ]
                     team2 <- region_teams[nrow(region_teams) - i + 1, ]
-                    winner <- simulate_game(team1, team2)
+                    winner <- simulate_game(team1, team2, variance_factor)
                     new_winners <- bind_rows(new_winners, winner)
                 }
             }
@@ -103,12 +122,12 @@ for (column in columns_to_add) {
 }
 
 # number of sims to run
-num_simulations <- 1000
+num_simulations <- 100
 
 # Run simulations
 set.seed(1234)  # For reproducibility
 for (simulation in 1:num_simulations) {
-    round_results <- simulate_tournament(ratings)
+    round_results <- simulate_tournament(ratings, variance_factor)
     
     # Adjusted loop to correctly update probabilities starting from 'second_round'
     for (round in 1:6) {

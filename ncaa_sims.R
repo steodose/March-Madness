@@ -122,7 +122,7 @@ for (column in columns_to_add) {
 }
 
 # number of sims to run
-num_simulations <- 100
+num_simulations <- 1000
 
 # Run simulations
 set.seed(1234)  # For reproducibility

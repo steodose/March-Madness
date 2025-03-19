@@ -6,7 +6,7 @@ library(gtExtras)
 
 
 # read in Ratings File (using Sports Ref SRS)
-ratings <- read_csv("https://raw.githubusercontent.com/steodose/March-Madness/main/ratings.csv")
+ratings <- read_csv("https://raw.githubusercontent.com/steodose/March-Madness/main/ratings_2025.csv")
 
 #calculate df of ratings
 std_dev <- sd(ratings$rating)
@@ -156,10 +156,11 @@ sims <- ratings
 team_mapping <- read_csv('https://raw.githubusercontent.com/steodose/March-Madness/main/ncaa_team_mapping.csv')
 
 sims_gt <- sims %>%
-    left_join(team_mapping, by = c("team_name" = "silver_team"))
+    left_join(team_mapping, by = c("team_name" = "espn_team"))
 
 sims_gt %>%
-    select(logo_url, team_name:rating, first_round, second_round:champ) %>%
+    select(-first_round) %>% 
+    select(logo_url, team_name:champ) %>%
     arrange(-champ, -rating) %>%
     mutate(rank = row_number()) %>%
     relocate(rank) %>%
@@ -170,7 +171,7 @@ sims_gt %>%
                seed = "Seed",
                region = "Region",
                rating = "Rating",
-               first_round = "First Round",
+               #first_round = "First Round",
                second_round = "Second Round",
                sweet_sixteen = "Sweet 16",
                elite_eight = "Elite 8",
@@ -179,16 +180,16 @@ sims_gt %>%
                champ = "Champ"
     ) %>% 
     gt_img_rows(logo_url, img_source = "web", height = 30) %>%
-    data_color(columns = vars(first_round:champ),
+    data_color(columns = vars(second_round:champ),
                colors = scales::col_numeric(palette = ggsci::rgb_material('amber', n = 100),
-                                            domain = c(0,1)
+                                            domain = c(0,1.1)
                )) %>% 
     fmt_percent(
-        columns = vars(first_round:champ),
+        columns = vars(second_round:champ),
         decimals = 1
     ) %>%
-    tab_header(title = md("**2024 March Madness Predictions**"),
-               subtitle ="Based on 10,000 simulations of the NCAA Tournament.") %>%
+    tab_header(title = md("**2025 March Madness Predictions**"),
+               subtitle ="Chances to reach each round listed below. Based on 10,000 simulations of the NCAA Tournament.") %>%
     tab_source_note(
         source_note = md("DATA: sports-reference.com<br>TABLE: @steodosescu")) %>%
     opt_table_font(
@@ -214,5 +215,7 @@ sims_gt %>%
         heading.align = "center",
         heading.subtitle.font.size = 14,
     ) %>%
-    gtsave("2024 March Madness Predictions.png")
+    gtsave("2025 March Madness Predictions.png")
 
+#write sims output to working directory
+write_csv(sims, "sims.csv")

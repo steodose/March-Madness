@@ -1,6 +1,6 @@
 # March-Madness
 
-![Simulations](https://github.com/steodose/March-Madness/blob/main/2024%20March%20Madness%20Predictions.png?raw=true)
+![Simulations](https://github.com/steodose/March-Madness/blob/main/2025%20March%20Madness%20Predictions.png?raw=true)
 
 This project simulates March Madness outcomes using a Monte Carlo method based on team ratings. The simulation predicts the probability of each team advancing through each round of the Tournament.
 

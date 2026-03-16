@@ -1,69 +1,69 @@
 team_name,region,seed,rating,play_in
-Duke,East,1,31.57,FALSE
-Siena,East,16,-4.33,FALSE
-Ohio State,East,8,19.1,FALSE
-TCU,East,9,15.77,FALSE
-St. John's,East,5,22.43,FALSE
-Northern Iowa,East,12,8.52,FALSE
-Kansas,East,4,21.11,FALSE
-Cal Baptist,East,13,2.54,FALSE
-Louisville,East,6,23.42,FALSE
-South Florida,East,11,12.98,FALSE
-Michigan State,East,3,23.46,FALSE
-North Dakota State,East,14,2.51,FALSE
-UCLA,East,7,18.28,FALSE
-UCF,East,10,13.32,FALSE
-UConn,East,2,22.93,FALSE
-Furman,East,15,-3.22,FALSE
-Florida,South,1,27.92,FALSE
-Lehigh,South,16,-9.32,TRUE
-Prairie View A&M,South,16,-12.71,TRUE
-Clemson,South,8,17,FALSE
-Iowa,South,9,19,FALSE
-Vanderbilt,South,5,23.18,FALSE
-McNeese,South,12,7.78,FALSE
-Nebraska,South,4,21.54,FALSE
-Troy,South,13,-0.75,FALSE
-North Carolina,South,6,19.4,FALSE
-VCU,South,11,13.1,FALSE
-Illinois,South,3,26.46,FALSE
-Penn,South,14,-0.86,FALSE
-Saint Mary's,South,7,17.91,FALSE
-Texas A&M,South,10,16.77,FALSE
-Houston,South,2,26.23,FALSE
-Idaho,South,15,-0.03,FALSE
-Arizona,West,1,29.93,FALSE
-Long Island,West,16,-4.94,FALSE
-Villanova,West,8,16.32,FALSE
-Utah State,West,9,17.36,FALSE
-Wisconsin,West,5,19.54,FALSE
-High Point,West,12,6.77,FALSE
-Arkansas,West,4,22.1,FALSE
-Hawaii,West,13,4.86,FALSE
-BYU,West,6,21.05,FALSE
-NC State,West,11,18.03,TRUE
-Texas,West,11,16.18,TRUE
-Gonzaga,West,3,25.14,FALSE
-Kennesaw State,West,14,0.14,FALSE
-Miami (FL),West,7,18.05,FALSE
-Missouri,West,10,13.08,FALSE
-Purdue,West,2,25.22,FALSE
-Queens (NC),West,15,-3.29,FALSE
-Michigan,Midwest,1,32.93,FALSE
-Howard,Midwest,16,-4.62,TRUE
-UMBC,Midwest,16,-4.39,TRUE
-Georgia,Midwest,8,19.58,FALSE
-Saint Louis,Midwest,9,17.29,FALSE
-Texas Tech,Midwest,5,21.94,FALSE
-Akron,Midwest,12,9.05,FALSE
-Alabama,Midwest,4,22.7,FALSE
-Hofstra,Midwest,13,4.48,FALSE
-Tennessee,Midwest,6,22.11,FALSE
-SMU,Midwest,11,17.29,TRUE
-Miami (OH),Midwest,11,5.38,TRUE
-Virginia,Midwest,3,21.61,FALSE
-Wright State,Midwest,14,0.14,FALSE
-Kentucky,Midwest,7,19.82,FALSE
-Santa Clara,Midwest,10,15.9,FALSE
-Iowa State,Midwest,2,27.15,FALSE
-Tennessee State,Midwest,15,-4.53,FALSE
+Duke,East,1,29.339875499999998,FALSE
+Siena,East,16,-1.986684165,FALSE
+Ohio State,East,8,17.335707,FALSE
+TCU,East,9,14.331583,FALSE
+St. John's,East,5,20.706205,FALSE
+Northern Iowa,East,12,8.637424249999999,FALSE
+Kansas,East,4,18.788238,FALSE
+Cal Baptist,East,13,3.02719715,FALSE
+Louisville,East,6,21.0930025,FALSE
+South Florida,East,11,12.3084025,FALSE
+Michigan State,East,3,21.321032000000002,FALSE
+North Dakota State,East,14,3.2237561,FALSE
+UCLA,East,7,17.0847765,FALSE
+UCF,East,10,11.7381065,FALSE
+UConn,East,2,21.190157,FALSE
+Furman,East,15,-1.5047695650000001,FALSE
+Florida,South,1,26.825161,FALSE
+Lehigh,South,16,-7.95887295,TRUE
+Prairie View A&M,South,16,-11.551232,TRUE
+Clemson,South,8,14.377043,FALSE
+Iowa,South,9,16.5234475,FALSE
+Vanderbilt,South,5,20.298062,FALSE
+McNeese,South,12,7.6456257,FALSE
+Nebraska,South,4,19.197561,FALSE
+Troy,South,13,0.49271635,FALSE
+North Carolina,South,6,17.2880525,FALSE
+VCU,South,11,12.244616,FALSE
+Illinois,South,3,23.962291999999998,FALSE
+Penn,South,14,0.1945695,FALSE
+Saint Mary's,South,7,16.417085,FALSE
+Texas A&M,South,10,15.346475,FALSE
+Houston,South,2,23.9101995,FALSE
+Idaho,South,15,0.21577699500000003,FALSE
+Arizona,West,1,27.450755,FALSE
+Long Island,West,16,-3.8148814,FALSE
+Villanova,West,8,14.946978999999999,FALSE
+Utah State,West,9,14.4954605,FALSE
+Wisconsin,West,5,18.1643385,FALSE
+High Point,West,12,7.3260472,FALSE
+Arkansas,West,4,20.294172000000003,FALSE
+Hawaii,West,13,3.2621014,FALSE
+BYU,West,6,18.2115145,FALSE
+NC State,West,11,15.14455,TRUE
+Texas,West,11,14.708768,TRUE
+Gonzaga,West,3,21.9872375,FALSE
+Kennesaw State,West,14,-0.05778726000000001,FALSE
+Miami (FL),West,7,16.109934,FALSE
+Missouri,West,10,12.1571125,FALSE
+Purdue,West,2,22.698214,FALSE
+Queens (NC),West,15,-2.03939076,FALSE
+Michigan,Midwest,1,30.467343,FALSE
+Howard,Midwest,16,-2.7423813900000003,TRUE
+UMBC,Midwest,16,-1.6635122,TRUE
+Georgia,Midwest,8,17.285918,FALSE
+Saint Louis,Midwest,9,14.799415,FALSE
+Texas Tech,Midwest,5,20.0338935,FALSE
+Akron,Midwest,12,9.18080465,FALSE
+Alabama,Midwest,4,20.7683845,FALSE
+Hofstra,Midwest,13,5.59854075,FALSE
+Tennessee,Midwest,6,19.357436999999997,FALSE
+SMU,Midwest,11,14.484044999999998,TRUE
+Miami (OH),Midwest,11,5.98956055,TRUE
+Virginia,Midwest,3,19.2723555,FALSE
+Wright State,Midwest,14,0.6118638000000001,FALSE
+Kentucky,Midwest,7,17.6886765,FALSE
+Santa Clara,Midwest,10,14.685535999999999,FALSE
+Iowa State,Midwest,2,23.5630515,FALSE
+Tennessee State,Midwest,15,-2.0003327250000003,FALSE

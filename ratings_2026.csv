@@ -1,0 +1,69 @@
+team_name,region,seed,rating,play_in
+Duke,East,1,31.57,FALSE
+Siena,East,16,-4.33,FALSE
+Ohio State,East,8,19.1,FALSE
+TCU,East,9,15.77,FALSE
+St. John's,East,5,22.43,FALSE
+Northern Iowa,East,12,8.52,FALSE
+Kansas,East,4,21.11,FALSE
+Cal Baptist,East,13,2.54,FALSE
+Louisville,East,6,23.42,FALSE
+South Florida,East,11,12.98,FALSE
+Michigan State,East,3,23.46,FALSE
+North Dakota State,East,14,2.51,FALSE
+UCLA,East,7,18.28,FALSE
+UCF,East,10,13.32,FALSE
+UConn,East,2,22.93,FALSE
+Furman,East,15,-3.22,FALSE
+Florida,South,1,27.92,FALSE
+Lehigh,South,16,-9.32,TRUE
+Prairie View A&M,South,16,-12.71,TRUE
+Clemson,South,8,17,FALSE
+Iowa,South,9,19,FALSE
+Vanderbilt,South,5,23.18,FALSE
+McNeese,South,12,7.78,FALSE
+Nebraska,South,4,21.54,FALSE
+Troy,South,13,-0.75,FALSE
+North Carolina,South,6,19.4,FALSE
+VCU,South,11,13.1,FALSE
+Illinois,South,3,26.46,FALSE
+Penn,South,14,-0.86,FALSE
+Saint Mary's,South,7,17.91,FALSE
+Texas A&M,South,10,16.77,FALSE
+Houston,South,2,26.23,FALSE
+Idaho,South,15,-0.03,FALSE
+Arizona,West,1,29.93,FALSE
+Long Island,West,16,-4.94,FALSE
+Villanova,West,8,16.32,FALSE
+Utah State,West,9,17.36,FALSE
+Wisconsin,West,5,19.54,FALSE
+High Point,West,12,6.77,FALSE
+Arkansas,West,4,22.1,FALSE
+Hawaii,West,13,4.86,FALSE
+BYU,West,6,21.05,FALSE
+NC State,West,11,18.03,TRUE
+Texas,West,11,16.18,TRUE
+Gonzaga,West,3,25.14,FALSE
+Kennesaw State,West,14,0.14,FALSE
+Miami (FL),West,7,18.05,FALSE
+Missouri,West,10,13.08,FALSE
+Purdue,West,2,25.22,FALSE
+Queens (NC),West,15,-3.29,FALSE
+Michigan,Midwest,1,32.93,FALSE
+Howard,Midwest,16,-4.62,TRUE
+UMBC,Midwest,16,-4.39,TRUE
+Georgia,Midwest,8,19.58,FALSE
+Saint Louis,Midwest,9,17.29,FALSE
+Texas Tech,Midwest,5,21.94,FALSE
+Akron,Midwest,12,9.05,FALSE
+Alabama,Midwest,4,22.7,FALSE
+Hofstra,Midwest,13,4.48,FALSE
+Tennessee,Midwest,6,22.11,FALSE
+SMU,Midwest,11,17.29,TRUE
+Miami (OH),Midwest,11,5.38,TRUE
+Virginia,Midwest,3,21.61,FALSE
+Wright State,Midwest,14,0.14,FALSE
+Kentucky,Midwest,7,19.82,FALSE
+Santa Clara,Midwest,10,15.9,FALSE
+Iowa State,Midwest,2,27.15,FALSE
+Tennessee State,Midwest,15,-4.53,FALSE

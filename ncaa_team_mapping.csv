@@ -1,5 +1,5 @@
-vegas_team,espn_team,ncaa_team,silver_team_id,silver_team,benz_team,massey_team,paine_team,kenpom_team,logo_url,espn_logo_url
-UConn Huskies,Connecticut,Connecticut,41.0,UConn,UConn,Connecticut,Connecticut,Connecticut,https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Connecticut_Huskies_logo.svg/192px-Connecticut_Huskies_logo.svg.png,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/41.png
+vegas_team,espn_team,btp_team,silver_team_id,silver_team,benz_team,massey_team,paine_team,kenpom_team,logo_url,espn_logo_url
+UConn Huskies,Connecticut,UConn,41.0,UConn,UConn,Connecticut,Connecticut,Connecticut,https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Connecticut_Huskies_logo.svg/192px-Connecticut_Huskies_logo.svg.png,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/41.png
 Houston Cougars,Houston,Houston,248.0,Houston,Houston,Houston,Houston,Houston,https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/252px-Houston_Cougars_primary_logo.svg.png,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/248.png
 Purdue Boilermakers,Purdue,Purdue,2509.0,Purdue,Purdue,Purdue,Purdue,Purdue,https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/320px-Purdue_Boilermakers_logo.svg.png,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2509.png
 Arizona Wildcats,Arizona,Arizona,12.0,Arizona,Arizona,Arizona,Arizona,Arizona,https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/200px-Arizona_Wildcats_logo.svg.png,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/12.png
@@ -134,10 +134,17 @@ Miami (OH) RedHawks,Miami (OH),Miami (OH),,,,,,,https://a.espncdn.com/combiner/i
 Northern Iowa Panthers,Northern Iowa,Northern Iowa,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2460.png
 Hofstra Pride,Hofstra,Hofstra,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2275.png
 Tennessee St Tigers,Tennessee State,Tennessee State,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2634.png
-LIU Sharks,LIU,LIU,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/112358.png
-Queens University Royals,Queens,Queens,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2511.png
+LIU Sharks,LIU,Long Island,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/112358.png
+Queens University Royals,Queens,Queens (NC),,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2511.png
 Furman Paladins,Furman,Furman,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/231.png
 Wright St Raiders,Wright State,Wright State,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2750.png
 Siena Saints,Siena,Siena,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2561.png
-Prairie View Panthers,Prairie View,Prairie View,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2504.png
+Prairie View Panthers,Prairie View,Prairie View A&M,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2504.png
 Kennesaw St Owls,Kennesaw State,Kennesaw State,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/338.png
+North Dakota State Bison,North Dakota State,North Dakota State,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2449.png
+Hawai'i Rainbow Warriors,Hawai'i,Hawaii,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png
+Cal Baptist Lancers,California Baptist,Cal Baptist,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2856.png
+Pennsylvania Quakers,Pennsylvania,Penn,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/219.png
+Lehigh Mountain Hawks,Lehigh,Lehigh,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2329.png
+Idaho Vandals,Idaho,Idaho,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/70.png
+UMBC Retrievers,UMBC,UMBC,,,,,,,,https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2378.png

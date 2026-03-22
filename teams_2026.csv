@@ -1,0 +1,69 @@
+team_name,region,seed,rating,play_in
+Duke,East,1,,FALSE
+Siena,East,16,,FALSE
+Ohio State,East,8,,FALSE
+TCU,East,9,,FALSE
+St. John's,East,5,,FALSE
+Northern Iowa,East,12,,FALSE
+Kansas,East,4,,FALSE
+Cal Baptist,East,13,,FALSE
+Louisville,East,6,,FALSE
+South Florida,East,11,,FALSE
+Michigan State,East,3,,FALSE
+North Dakota State,East,14,,FALSE
+UCLA,East,7,,FALSE
+UCF,East,10,,FALSE
+UConn,East,2,,FALSE
+Furman,East,15,,FALSE
+Florida,South,1,,FALSE
+Lehigh,South,16,,TRUE
+Prairie View A&M,South,16,,TRUE
+Clemson,South,8,,FALSE
+Iowa,South,9,,FALSE
+Vanderbilt,South,5,,FALSE
+McNeese,South,12,,FALSE
+Nebraska,South,4,,FALSE
+Troy,South,13,,FALSE
+North Carolina,South,6,,FALSE
+VCU,South,11,,FALSE
+Illinois,South,3,,FALSE
+Penn,South,14,,FALSE
+Saint Mary's,South,7,,FALSE
+Texas A&M,South,10,,FALSE
+Houston,South,2,,FALSE
+Idaho,South,15,,FALSE
+Arizona,West,1,,FALSE
+Long Island,West,16,,FALSE
+Villanova,West,8,,FALSE
+Utah State,West,9,,FALSE
+Wisconsin,West,5,,FALSE
+High Point,West,12,,FALSE
+Arkansas,West,4,,FALSE
+Hawaii,West,13,,FALSE
+BYU,West,6,,FALSE
+NC State,West,11,,TRUE
+Texas,West,11,,TRUE
+Gonzaga,West,3,,FALSE
+Kennesaw State,West,14,,FALSE
+Miami (FL),West,7,,FALSE
+Missouri,West,10,,FALSE
+Purdue,West,2,,FALSE
+Queens (NC),West,15,,FALSE
+Michigan,Midwest,1,,FALSE
+Howard,Midwest,16,,TRUE
+UMBC,Midwest,16,,TRUE
+Georgia,Midwest,8,,FALSE
+Saint Louis,Midwest,9,,FALSE
+Texas Tech,Midwest,5,,FALSE
+Akron,Midwest,12,,FALSE
+Alabama,Midwest,4,,FALSE
+Hofstra,Midwest,13,,FALSE
+Tennessee,Midwest,6,,FALSE
+SMU,Midwest,11,,TRUE
+Miami (OH),Midwest,11,,TRUE
+Virginia,Midwest,3,,FALSE
+Wright State,Midwest,14,,FALSE
+Kentucky,Midwest,7,,FALSE
+Santa Clara,Midwest,10,,FALSE
+Iowa State,Midwest,2,,FALSE
+Tennessee State,Midwest,15,,FALSE
